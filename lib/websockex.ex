@@ -418,9 +418,9 @@ defmodule WebSockex do
              | %WebSockex.NotConnectedError{}
              | %WebSockex.InvalidFrameError{}}
           | none
-  def send_frame(client, _) when client == self() do
-    raise %WebSockex.CallingSelfError{function: :send_frame}
-  end
+  # def send_frame(client, _) when client == self() do
+  #   raise %WebSockex.CallingSelfError{function: :send_frame}
+  # end
 
   def send_frame(client, frame) do
     try do
